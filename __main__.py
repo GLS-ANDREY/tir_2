@@ -25,8 +25,14 @@ def risovanie_kadra():
     okno.blit(fon_gori, [0, 0])
     okno.blit(knopka_nastroiki, lou)
     okno.blit(knopka_pushek, kollet)
-    # pygame.draw.rect(okno, [255, 0, 0], lou, 3)
+    okno.blit(ball_attack, [100,100])
     pygame.display.flip()
+
+
+def sdelay_nazvanie_igri():
+    f = pygame.font.SysFont("arial", 100, False, True)
+    gavs = f.render("ball attack", True, [43, 219, 133])
+    return gavs
 
 
 fon_gori = image.load("kartynky/fon gori.jpg")
@@ -36,6 +42,7 @@ lou = pygame.Rect(0, 0, 74, 74)
 knopka_pushek = image.load("kartynky/knopka_pushek.png")
 knopka_pushek = help.izmeni_kartinku(knopka_pushek, 74, 74, [0, 168, 243], 1)
 kollet = pygame.Rect(85, 0, 74, 74)
+ball_attack = sdelay_nazvanie_igri()
 
 while 20 == 20:
     time.sleep(1 / 60)
