@@ -25,14 +25,15 @@ def risovanie_kadra():
     okno.blit(fon_gori, [0, 0])
     okno.blit(knopka_nastroiki, lou)
     okno.blit(knopka_pushek, kollet)
-    okno.blit(ball_attack, [100,100])
+    okno.blit(ball_attack, [100, 100])
     pygame.display.flip()
 
 
 def sdelay_nazvanie_igri():
-    f = pygame.font.SysFont("arial", 100, False, True)
+    f = pygame.font.SysFont("comicsansms", 100, False, True)
     gavs = f.render("ball attack", True, [43, 219, 133])
-    return gavs
+    amber = pygame.transform.rotate(gavs, 10)
+    return amber
 
 
 fon_gori = image.load("kartynky/fon gori.jpg")
