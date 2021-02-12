@@ -49,10 +49,18 @@ def risovanie_pushek():
 
 
 def sdelay_nazvanie_igri():
-    f = pygame.font.SysFont("comicsansms", 100, False, True)
-    gavs = f.render("ball attack", True, [43, 219, 133])
-    amber = pygame.transform.rotate(gavs, 10)
-    return amber
+    f = pygame.font.SysFont("comicsansms", 100, False, True)  # создаём шрифт
+    gavs = f.render("attack", True, [43, 219, 133])  # делаем картинку из букв
+    gavs = pygame.transform.rotate(gavs, 10)  # поворачиваем картинку
+
+    amber = f.render("Ball", True, [43, 219, 133])
+    amber = pygame.transform.rotate(amber, 10)
+
+    volt = pygame.Surface([500,500],pygame.SRCALPHA)
+
+    volt.blit(gavs, [100, 100])
+    volt.blit(amber, [100, 50])
+    return volt
 
 
 fon = image.load("kartynky/fon.png")
