@@ -61,6 +61,7 @@ def risovanie_gl():
     okno.blit(knopka_nastroiki, knopka_nastroiki_rect)
     okno.blit(knopka_pushek, knopka_pushek_rect)
     okno.blit(ball_attack, [100, 100])
+    okno.blit(pushka,pushka_rect)
     pygame.display.flip()
 
 
@@ -93,18 +94,32 @@ def sdelay_nazvanie_igri():
 
 fon = image.load("kartynky/fon.png")
 fon = pygame.transform.scale(fon, [700, 800])
+
 knopka_nastroiki = image.load("kartynky/knopka_nastroiki.png")
 knopka_nastroiki = help.izmeni_kartinku(knopka_nastroiki, 74, 74, [0, 168, 243], 1)
 knopka_nastroiki_rect = pygame.Rect(10, 10, 74, 74)
+
 knopka_pushek = image.load("kartynky/knopka_pushek.png")
 knopka_pushek = help.izmeni_kartinku(knopka_pushek, 74, 74, [0, 168, 243], 1)
 knopka_pushek_rect = pygame.Rect(100, 10, 74, 74)
+
 ball_attack = sdelay_nazvanie_igri()
+
 OK = image.load("kartynky/OK.png")
 OK = help.izmeni_kartinku(OK, 80, 74, [0, 168, 243], 1)
+
 knopka_OK_rect = pygame.Rect(0, 0, 80, 74)
 knopka_OK_rect.centerx = 350
 knopka_OK_rect.centery = 605
+
+pushka = image.load("kartynky/pushka.png")
+pushka = help.izmeni_kartinku(pushka,150,150,[0,168,243],60)
+
+pushka_rect = pygame.Rect(350,400,80,74)
+
+pushka_rect.centerx = 350
+pushka_rect.centery = 605
+
 ekran = "gl"
 
 while 20 == 20:
